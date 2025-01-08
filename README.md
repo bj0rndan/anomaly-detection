@@ -90,5 +90,8 @@ La interfaz da la posibilidad de cargar imágenes y entrenar un modelo con las i
 
 Además, se puede realizar inferencia y devolver predicciones sobre imágenes KO con sus mapas de calor asociadas:
 ![image](https://github.com/user-attachments/assets/d877be12-bc47-4f9f-9383-3b3c3423ef39)
-</details>
 
+## 🚧 Work in progress
+- Resolver el error de carga de un modelo entrenado
+- Añadir benchmarking para medición de espacio ocupado por modelo y para determinar el tiempo de inferencia
+- Mejorar los mensajes informativos
