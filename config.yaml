@@ -1,0 +1,36 @@
+# Model Configuration
+model:
+  backbone:
+    name: "resnet50"
+    layers:
+      layer2: true
+      layer3: false
+      layer4: false
+    input_size: [512, 512]
+  autoencoder:
+    in_channels: 512
+    latent_dim: 100
+    batch_norm: true
+
+# Training Configuration
+training:
+  batch_size: 4
+  num_epochs: 20
+  learning_rate: 0.001
+  train_test_split: 0.8
+  threshold_std_multiplier: 3
+  verbose: 2
+
+# Paths Configuration
+paths:
+  train_path: "/content/ok"
+  test_path: "/content/ko"
+  output_path: "/content/outputs"
+  model_save_path: "/content/savedmodel"
+
+# Visualization Configuration
+visualization:
+  heatmap:
+    alpha: 0.5
+    colormap: "magma"
+    figure_size: [20, 5]
