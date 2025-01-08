@@ -78,14 +78,17 @@ Los resultados se guardan automáticamente, incluyendo:
 - Soporte para procesamiento por lotes
 - Visualización personalizable de resultados
 
-<details>
-<summary> 🖥️ Interfaz gráfica con Gradio </summary>
+
+## 🖥️ Interfaz gráfica con Gradio 
 
   Se ejecuta mediante:
 ```bash
 python gradio-app.py
 ```
+La interfaz da la posibilidad de cargar imágenes y entrenar un modelo con las imágenes OK:
+![image](https://github.com/user-attachments/assets/03dbbe25-a9a3-4c39-8a88-3f86b8c74bc3)
 
-
+Además, se puede realizar inferencia y devolver predicciones sobre imágenes KO con sus mapas de calor asociadas:
+![image](https://github.com/user-attachments/assets/d877be12-bc47-4f9f-9383-3b3c3423ef39)
 </details>
 
