@@ -71,7 +71,7 @@ def main():
             print(f"Saving model in {args.model_path}")
             detector.save_model()
         print("Processed is finished, everyone is happy.")
-        print(f"Find trained model at: {args.model_path} /n Find output images at {args.output_path}")
+        print(f"Find trained model at: {args.model_path} /n Find output images at {args.output_dir}")
 
     if args.mode in ['evaluate', 'full']:
         if not args.test_path:
@@ -90,7 +90,7 @@ def main():
         detector.visualize_results(args.test_path)
 
         print("Processed is finished, everyone is happy.")
-        print(f"Find trained model at: {args.model_path} /n Find output images at {args.output_path}")
+        print(f"Find trained model at: {args.model_path} /n Find output images at {args.output_dir}")
 
 if __name__ == "__main__":
     main()
