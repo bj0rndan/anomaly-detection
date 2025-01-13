@@ -1,3 +1,4 @@
+
 # Anomaly Detection
 
 ## 📋 Descripción
@@ -54,6 +55,22 @@ paths:
 ```bash
 python /anomaly-detection/main.py --config="ruta_del_config" --mode=full --test_path="ruta_del_conjunto_test" --model_path="ruta_para_guardar_modelo" --output_dir="ruta_para_guardar_outputs_y_gráficas"
 ```
+### Perfilado avanzado del modelo usando Pytorch.profiler
+```bash
+python /anomaly-detection/profiling-script.py
+```
+torch.profiler es una herramienta de perfilado avanzada que permite analizar el rendimiento de modelos PyTorch, proporcionando información detallada sobre:
+
+ProfilerActivity.CPU: Operaciones realizadas en CPU
+ProfilerActivity.CUDA: Operaciones realizadas en GPU
+Tiempos de ejecución
+Uso de memoria
+Trazas de operadores
+
+Tanto para el extractor de características como para el modelo de extracción de características como del modelo de tipo Autoencoder los resultados se guardan en formato .csv en el directorio de los outputs:
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/cec2d05c-6016-4164-9f05-aad0cffb619f" alt="Description" width="600">
+</div>
 
 ## 🛠️ Funcionalidades Principales
 
@@ -90,8 +107,3 @@ La interfaz da la posibilidad de cargar imágenes y entrenar un modelo con las i
 
 Además, se puede realizar inferencia y devolver predicciones sobre imágenes KO con sus mapas de calor asociadas:
 ![image](https://github.com/user-attachments/assets/d877be12-bc47-4f9f-9383-3b3c3423ef39)
-
-## 🚧 Work in progress
-- Resolver el error de carga de un modelo entrenado
-- Añadir benchmarking para medición de espacio ocupado por modelo y para determinar el tiempo de inferencia
-- Mejorar los mensajes informativos
