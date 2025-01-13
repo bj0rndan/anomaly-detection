@@ -286,4 +286,7 @@ class AnomalyDetector:
     def load_model(self, model_path):
         checkpoint = torch.load(model_path)
         self.backbone.load_state_dict(checkpoint['backbone_state_dict'])
-        self.model.load_state_dict(checkpoint['model'])
+        self.model.load_state_dict(checkpoint['model_state_dict'])
+        self.best_threshold = checkpoint['best_threshold']
+        self.heat_map_max = checkpoint['heat_map_max']
+        self.heat_map_min = checkpoint['heat_map_min']
