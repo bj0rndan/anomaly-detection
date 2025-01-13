@@ -91,7 +91,7 @@ def main():
     cae_model.to(device)
     
     # Create dummy input
-    dummy_input = torch.randn(1, 3, *input_size).to(device)
+    dummy_input = torch.randn(1, 3, 512, 512).to(device)
     
     # Profile feature extractor
     fe_output, fe_prof = run_inference_with_profiler(
