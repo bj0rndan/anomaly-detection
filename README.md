@@ -67,9 +67,10 @@ cae_model.load_state_dict(torch_state['model_state_dict'])
 - De la configuración elegida anteriormente depende el tamaño de entrada al modelo FeatCAE(in_channels=X)
 - Para cambiar de un modelo entrenado a otro solo hace falta cambiar la ruta de torch_state
 
-<details>
-<summary> Tabla de in_channels basada en elección de capas: </summary>
   
+<div align="center">
+
+ ### Tabla de in_channels basada en elección de capas:  
 | Layer2 | Layer3 | Layer4 | in_channels |
 | :---: | :---: | :---: | :---: |
 | True | False | False |  512 |
@@ -80,8 +81,7 @@ cae_model.load_state_dict(torch_state['model_state_dict'])
 | False | True | True | 3072 |
 | True | True | True | 3584 |
 
-</details>
-
+</div>
 
 torch.profiler es una herramienta de perfilado avanzada que permite analizar el rendimiento de modelos PyTorch, proporcionando información detallada sobre:
 
