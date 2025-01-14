@@ -55,10 +55,32 @@ paths:
 ```bash
 python /anomaly-detection/main.py --config="ruta_del_config" --mode=full --test_path="ruta_del_conjunto_test" --model_path="ruta_para_guardar_modelo" --output_dir="ruta_para_guardar_outputs_y_gráficas"
 ```
-### Perfilado avanzado del modelo usando Pytorch.profiler
-```bash
-python /anomaly-detection/profiling-script.py
+### Perfilado avanzado del modelo usando Pytorch.profiler con performance.ipynb
+```python
+# MODIFY THE BELOW PARAMS
+fe_model = resnet_feature_extractor(layer2=True) # Load the feature extraction model 
+cae_model = FeatCAE(in_channels=512, latent_dim=100)
+torch_state = torch.load('/home/jovyan/work/anomaly_detection_demo/modelsave/model.pth')
+cae_model.load_state_dict(torch_state['model_state_dict'])
 ```
+- Dentro de FE model es posible definir las capas con las que se van a extraer las características (layer2, layer3 y layer4) para ello es necesario poner la capa que se necesite a True.
+- De la configuración elegida anteriormente depende el tamaño de entrada al modelo FeatCAE(in_channels=X)
+- Para cambiar de un modelo entrenado a otro solo hace falta cambiar la ruta de torch_state
+
+<details>
+<summary> Tabla de in_channels basada en elección de capas: </summary>
+| Layer2 | Layer3 | Layer4 | in_channels |
+| :---: | :---: | :---: | :---: |
+| True | False | False |  512 |
+| False | True | False | 1024 |
+| False | False | True | 2048 |
+| True | True | False | 1536 |
+| True | False | True | 2560 |
+| False | True | True | 3072 |
+| True | True | True | 3584 |
+</details>
+
+
 torch.profiler es una herramienta de perfilado avanzada que permite analizar el rendimiento de modelos PyTorch, proporcionando información detallada sobre:
 
 ProfilerActivity.CPU: Operaciones realizadas en CPU
