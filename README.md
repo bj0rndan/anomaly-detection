@@ -69,6 +69,7 @@ cae_model.load_state_dict(torch_state['model_state_dict'])
 
 <details>
 <summary> Tabla de in_channels basada en elección de capas: </summary>
+  
 | Layer2 | Layer3 | Layer4 | in_channels |
 | :---: | :---: | :---: | :---: |
 | True | False | False |  512 |
@@ -78,6 +79,7 @@ cae_model.load_state_dict(torch_state['model_state_dict'])
 | True | False | True | 2560 |
 | False | True | True | 3072 |
 | True | True | True | 3584 |
+
 </details>
 
 
